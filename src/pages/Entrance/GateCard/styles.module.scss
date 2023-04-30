@@ -1,0 +1,39 @@
+.wrapper {
+    width: 380px;
+    height: 320px;
+    background-color: var(--color5);
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.wrapper_h3 {
+    font-size: 20px;
+    padding-top: 40px;
+    padding-left: 30px;
+}
+
+.wrapper_h1 {
+    padding-left: 30px;
+    font-size: 40px;
+    color: var(--color1);
+}
+
+.wrap_button {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+}
+
+.bgCustomize {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 280px;
+    width: 220px;
+    background-color: var(--color3);
+    border-radius: 100% 0% 61% 39% / 62% 100% 0% 38% ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

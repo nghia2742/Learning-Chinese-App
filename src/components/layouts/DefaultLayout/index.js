@@ -1,3 +1,4 @@
+import Footer from "../../partials/Footer";
 import Navbar from "../../partials/Navbar";
 
 function DefaultLayout({ children }) {
@@ -7,6 +8,7 @@ function DefaultLayout({ children }) {
                 <Navbar/>
                 <div className="content">{children}</div>
             </div>
+            <Footer/>
         </div>
     );
 }
