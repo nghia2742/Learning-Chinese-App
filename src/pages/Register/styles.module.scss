@@ -1,0 +1,49 @@
+.wrapper {
+    position: relative;
+    height: fit-content;
+    width: 100%;
+    background-color: var(--color6);
+    padding-bottom: 100px;
+    padding-top: 100px;
+}
+
+.buttonBack {
+    position: absolute;
+    top: 20px;
+    left: 30px;
+}
+
+.wrap_h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--color1);
+}
+
+.wrap_register_form {
+    margin: 0 auto;
+    padding: 50px 60px;
+    width: fit-content;
+    background-color: var(--color1);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.wrap_input_text {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 27px;
+}
+
+.wrap_input {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 15px;
+}
+.wrap_radio {
+    display: flex;
+    gap: 30px;
+}
