@@ -1,5 +1,5 @@
 import classNames from 'classnames/bind';
-import styles from './styles.module.scss';
+import styles from './Register.module.scss';
 import InputStyle from '../../components/common/InputStyle';
 import ButtonStyles from '../../components/common/ButtonStyles';
 import { Link } from 'react-router-dom';

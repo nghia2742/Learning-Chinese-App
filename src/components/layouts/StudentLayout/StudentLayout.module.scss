@@ -1,0 +1,14 @@
+.main {
+    display: flex;
+}
+
+.left {
+    min-width: 200px;
+}
+
+.right {
+    width: calc(100vw - 250px);
+    height: fit-content;
+    margin: 0 20px;
+}
+

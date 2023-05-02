@@ -1,11 +1,17 @@
 import classNames from 'classnames/bind';
-import styles from './styles.module.scss';
+import styles from './Navbar.module.scss';
 import ButtonOne from '../../common/ButtonStyles';
 import { Link } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 
-function Navbar() {
+function Navbar(props) {
+    var btnRegister = <Link to={'/register'}>
+                        <ButtonOne buttonStyles={'buttonFour'} text={'Register'}/>
+                    </Link>
+    if (!props.isEntrance) {
+        btnRegister = '';
+    }
     return (
     <nav className={cx('navbar')}>
         <div className={cx('wrapper')}>
@@ -14,9 +20,7 @@ function Navbar() {
                 OUR LOGO
             </div>
             <div className={cx('rightSide')}>
-                <Link to={'/register'}>
-                    <ButtonOne buttonStyles={'buttonFour'} text={'Register'}/>
-                </Link>
+                {btnRegister}
                 <ButtonOne buttonStyles={'buttonOne'} text={'Vi'}/>
             </div>
         </div>

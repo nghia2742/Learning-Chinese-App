@@ -1,0 +1,35 @@
+$colorInactive: var(--color8);
+
+.wrap_link {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: var(--color8);
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+
+    &:hover {
+        background-color: var(--color7);
+    }
+
+    &:active {
+        background-color: var(--color6);
+        color: var(--color1);
+    }
+}
+
+.activeItem {
+    background-color: var(--color6);
+    color: var(--color1);
+}
+
+.wrap_icon {
+    font-size: 20px;
+}
+
+.wrap_url {
+    font-size: 15px;
+    font-weight: 400;
+}

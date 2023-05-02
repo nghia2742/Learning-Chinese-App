@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import styles from './styles.module.scss';
+import styles from './PopupLogin.module.scss';
 import classnames from 'classnames/bind';
 import InputStyle from '../InputStyle';
 import ButtonStyles from '../ButtonStyles'
 
 const cx = classnames.bind(styles);
 
-function Popup(props) {
+function PopupLogin(props) {
     const [show, setShow] = useState(false);
 
     const togglePopup = () => {
@@ -48,4 +48,4 @@ function Popup(props) {
     );
 }
 
-export default Popup;
+export default PopupLogin;

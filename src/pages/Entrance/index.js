@@ -1,5 +1,5 @@
 import classNames from 'classnames/bind';
-import styles from './styles.module.scss';
+import styles from './Entrance.module.scss';
 import ButtonStyles from '../../components/common/ButtonStyles';
 import GateCard from './GateCard';
 

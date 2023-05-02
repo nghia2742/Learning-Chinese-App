@@ -1,0 +1,32 @@
+
+.news_item {
+    width: 100%;
+    height: fit-content;
+    width: 80%;
+    padding: 20px;
+    margin: 0 30px;
+    display: flex;
+    gap: 20px;
+    cursor: pointer;
+
+    &:hover {
+        border-radius: 10px;
+        background-color: var(--color7);
+    }
+}
+
+.news_item_icon {
+    height: 100px;
+    min-width: 100px;
+    border-radius: 10px;
+    background-color: var(--color4);
+    margin-bottom: 20px;
+}
+
+.news_content {
+    display: -webkit-box;
+    text-align: justify;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}

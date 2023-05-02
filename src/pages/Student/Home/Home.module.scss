@@ -1,0 +1,25 @@
+.container {
+    margin: 20px 15px 100px 0;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.banner {
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+    background-color: var(--color4);
+}
+
+.wrap_carousel {
+    margin-bottom: 100px;
+}
+
+.title_section {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 15px;
+}
+

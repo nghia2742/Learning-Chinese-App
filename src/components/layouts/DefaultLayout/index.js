@@ -5,7 +5,7 @@ function DefaultLayout({ children }) {
     return (
         <div>
             <div className="container">
-                <Navbar/>
+                <Navbar isEntrance={true}/>
                 <div className="content">{children}</div>
             </div>
             <Footer/>

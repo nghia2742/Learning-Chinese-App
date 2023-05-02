@@ -1,5 +1,5 @@
-import Popup from '../../../components/common/Popup';
-import styles from './styles.module.scss';
+import Popup from '../../../components/common/PopupLogin';
+import styles from './GateCard.module.scss';
 import classNames from 'classnames/bind';
 
 
