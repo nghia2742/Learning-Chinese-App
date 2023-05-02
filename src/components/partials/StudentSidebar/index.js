@@ -13,30 +13,37 @@ const sidebarItems = [
         id: 1,
         url: '/student/home',
         title: 'Home',
+        key: 'home',
         icon: <AiOutlineHome />,
     },
     {
         id: 2,
         url: '/student/lookup',
         title: 'Look up',
+        key: 'lookup',
         icon: <BiSearch />,
     },
     {
         id: 3,
         url: '/student/courses',
         title: 'Courses',
+        key: 'courses',
         icon: <AiOutlineBook />,
     },
     {
         id: 4,
         url: '/student/myclass',
         title: 'My class',
+        key: 'myclass',
         icon: <BsPeople />,
     },
 ];
 
 function StudentSidebar() {
-    const [activePage, setActivePage] = useState('Home');
+    const url = window.location.href;
+    const currentPage = url.substring(url.lastIndexOf('/') + 1);
+    
+    const [activePage, setActivePage] = useState(currentPage);
 
     const handleClick = (page) => {
         setActivePage(page);
@@ -45,12 +52,9 @@ function StudentSidebar() {
     return (
         <ul className={cx('sidebarStudent')}>
             {sidebarItems.map((item, index) => (
-                <li
-                    key={index}
-                    onClick={() => handleClick(item.title)}
-                >
+                <li key={index} onClick={() => handleClick(item.key)}>
                     <LinkStyle
-                    isActive={activePage === item.title ? true : false} 
+                        isActive={activePage === item.key ? true : false}
                         icon={item.icon}
                         url={item.url}
                         title={item.title}

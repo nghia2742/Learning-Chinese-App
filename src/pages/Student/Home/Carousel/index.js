@@ -13,7 +13,6 @@ export default class Responsive extends Component {
 
         var settings = {
             dots: true,
-            accessibility:true,
             arrows: false,
             infinite: false,
             speed: 500,
@@ -51,8 +50,8 @@ export default class Responsive extends Component {
             <div>
                 <Slider {...settings}>
                     {items.map((item, index) => (
-                        <div>
-                            <div className={cx('carousel_item')} key={index}>
+                        <div key={index}>
+                            <div className={cx('carousel_item')} >
                                 <img className={cx('imageCourse')} src={item.image} alt=''/>
                             </div>
                                 <h3 className={cx('titleCourse')}>{item.title}</h3>

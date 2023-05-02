@@ -15,10 +15,10 @@ function Navbar(props) {
     return (
     <nav className={cx('navbar')}>
         <div className={cx('wrapper')}>
-            <div className={cx('logo')}>
+            <Link to={'/'} className={cx('logo')}>
                 <div className={cx('circle')}></div>
-                OUR LOGO
-            </div>
+                越爱学汉语
+            </Link>
             <div className={cx('rightSide')}>
                 {btnRegister}
                 <ButtonOne buttonStyles={'buttonOne'} text={'Vi'}/>
