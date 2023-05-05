@@ -7,12 +7,12 @@ import NewsItem from './NewsItem';
 const cx = classNames.bind(styles);
 
 const items = [
-    { title: 'Item 1', image: 'https://dummyimage.com/250x150/54b4f9/fff' },
-    { title: 'Item 2', image: 'https://dummyimage.com/250x150/54b4f9/fff' },
-    { title: 'Item 3', image: 'https://dummyimage.com/250x150/54b4f9/fff' },
-    { title: 'Item 4', image: 'https://dummyimage.com/250x150/54b4f9/fff' },
-    { title: 'Item 5', image: 'https://dummyimage.com/250x150/54b4f9/fff' },
-    { title: 'Item 6', image: 'https://dummyimage.com/250x150/54b4f9/fff' },
+    { title: 'Course 1', image: 'https://picsum.photos/250/150/?random' },
+    { title: 'Course 2', image: 'https://picsum.photos/250/150/?random' },
+    { title: 'Course 3', image: 'https://picsum.photos/250/150/?random' },
+    { title: 'Course 4', image: 'https://picsum.photos/250/150/?random' },
+    { title: 'Course 5', image: 'https://picsum.photos/250/150/?random' },
+    { title: 'Course 6', image: 'https://picsum.photos/250/150/?random' },
 ];
 
 function Home() {
@@ -20,7 +20,7 @@ function Home() {
         <main className={cx('container')}>
             {/* BANNER */}
             <img
-                src="https://dummyimage.com/1015x200/D7D7D7/fff"
+                src="https://picsum.photos/1015/200/?random"
                 className={cx('banner')}
                 alt=""
             />

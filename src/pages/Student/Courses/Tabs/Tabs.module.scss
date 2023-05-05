@@ -1,0 +1,17 @@
+.wrap_navTabs {
+    display: flex;
+    gap: 20px;
+    margin: 40px 0;
+}
+
+.navTab_item {
+    cursor: pointer;
+    color: var(--color7);
+    font-size: 18px;
+}
+
+.active {
+    color: var(--color2);
+    font-weight: bold;
+    text-decoration: underline;
+}

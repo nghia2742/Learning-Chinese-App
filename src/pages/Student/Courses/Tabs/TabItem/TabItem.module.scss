@@ -1,0 +1,35 @@
+.card {
+    display: flex;
+    gap: 40px;
+    color: var(--color2);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 30px;
+    padding-right: 60px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    min-height: 200px;
+
+    &:hover {
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+}
+
+.imageCourse {
+    width: 200px;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+.subTitleCourse {
+    display: -webkit-box;
+    text-align: justify;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}
+
+.rightCard {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
