@@ -3,53 +3,55 @@ import styles from './Lookup.module.scss';
 import InputStyle from '../../../components/common/InputStyle';
 import ButtonStyles from '../../../components/common/ButtonStyles';
 import Loader from '../../../components/common/Loader';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 
-const dictionaryList = [
-    {
-        word: 'apple',
-        definition:
-            'a round fruit with red, yellow, or green skin and firm white flesh',
-        example: 'She took a bite out of the apple.',
-    },
-    {
-        word: 'book',
-        definition:
-            'a written or printed work consisting of pages glued or sewn together along one side and bound in covers.',
-        example: 'I bought a new book yesterday.',
-    },
-    {
-        word: 'computer',
-        definition:
-            'an electronic device that can store, retrieve, and process data.',
-        example: 'I spend a lot of time on my computer.',
-    },
-];
-
 function Lookup() {
+    const token =
+        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDRlMzRjZWM0MjUwZGJiYzk2NTczZTIiLCJpYXQiOjE2ODMyOTI2NTEsImV4cCI6MTY4NDE1NjY1MX0.gvqHwfJs1yucikdoSQTXSpOtu3qv3PG6jvwWG5uY52Q';
+
     const [word, setWord] = useState('');
     const [result, setResult] = useState('');
-    const [isLoading, setIsLoading] = useState(true);
+    const [isLoading, setIsLoading] = useState(false);
+    const [dictionary, setDictionary] = useState([]);
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        fetch('https://api-learnvncn.onrender.com/lookup', {
+            headers: {
+                Authorization: 'Bearer ' + token,
+                'Content-Type': 'application/json',
+            },
+        })
+            .then((response) => response.json())
+            .then((data) => setDictionary(data))
+            .catch((error) => console.error(error));
+    }, []);
 
     const handleInputChange = (value) => {
         setWord(value);
     };
 
     const handleSubmit = () => {
-        const normalizeWord = word.toLowerCase();
-        const findWord = dictionaryList.find((e) => e.word === normalizeWord);
+        navigate(`/student/lookup?word=${word}`);
+        setIsLoading(true);
+
+        const lowerCaseKeyword = word.toLowerCase().trim();
+        const findWord = dictionary.find((item) =>
+            item.word.toLowerCase().includes(lowerCaseKeyword)
+        );
+
         setTimeout(() => {
-            setIsLoading(false)
+            setIsLoading(false);
         }, 1500);
 
-        if (findWord) {
+        if (findWord !== undefined) {
             setResult(findWord);
         } else {
             setResult(false);
         }
-        setIsLoading(true)
     };
 
     return (
@@ -63,8 +65,9 @@ function Lookup() {
                         textPlaceHolder={'Enter here...'}
                     />
                 </div>
-                <div>
+                <div className={cx('buttonSearch')}>
                     <ButtonStyles
+                        disabled={word === '' ? true : false}
                         submit={handleSubmit}
                         buttonStyles={'buttonThree'}
                         text={'FIND'}
@@ -100,16 +103,56 @@ function Lookup() {
                                     </div>
                                 ) : (
                                     <>
-                                        <h1 className={cx('result_keyword')}>
-                                            {result.word}
-                                        </h1>
-                                        <p className={cx('result_definition')}>
-                                            <b>Definition: </b>
-                                            {result.definition}
+                                        <h1>{result.word}</h1>
+
+                                        <div className={cx('wordType')}>
+                                            <span>【{result.type}】</span>
+                                            <span>【{result.pinyin}】</span>
+                                            <span>【{result.level}】</span>
+                                        </div>
+                                        <p>
+                                            <b>Definition: </b> {result.meaning}
                                         </p>
-                                        <p className={cx('result_example')}>
-                                            <b>Example: </b>
-                                            {result.example}
+                                        <p>
+                                            <b>Example: </b> {result.example}
+                                        </p>
+                                        <p>
+                                            <b>Linking word: </b>
+                                            {result.linking_word.map(
+                                                (e, index) => {
+                                                    return (
+                                                        <>
+                                                            <Link
+                                                                className={cx(
+                                                                    'wordDocument'
+                                                                )}
+                                                                key={index}
+                                                            >
+                                                                {e}
+                                                            </Link>
+                                                            <span>&ensp;</span>
+                                                        </>
+                                                    );
+                                                }
+                                            )}
+                                        </p>
+                                        <p>
+                                            <b>Documents: </b>
+                                            {result.bai_khoa.map((e, index) => {
+                                                return (
+                                                    <>
+                                                        <Link
+                                                            className={cx(
+                                                                'wordDocument'
+                                                            )}
+                                                            key={index}
+                                                        >
+                                                            {e}
+                                                        </Link>
+                                                        <span>&ensp;</span>
+                                                    </>
+                                                );
+                                            })}
                                         </p>
                                     </>
                                 )}

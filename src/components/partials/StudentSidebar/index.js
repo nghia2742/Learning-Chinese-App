@@ -41,8 +41,8 @@ const sidebarItems = [
 
 function StudentSidebar() {
     const url = window.location.href;
-    const currentPage = url.substring(url.lastIndexOf('/') + 1);
-    
+    const currentPage = url.substring(url.lastIndexOf('/') + 1).split('?')[0];
+
     const [activePage, setActivePage] = useState(currentPage);
 
     const handleClick = (page) => {
