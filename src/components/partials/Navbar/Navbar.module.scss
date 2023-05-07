@@ -1,3 +1,6 @@
+$sm: 767px;
+$md: 991px;
+
 .wrapper {
     height: 60px;
     background-color: transparent;
@@ -14,16 +17,30 @@
     gap: 20px;
     font-size: 20px;
     font-weight: 700;
+
+    @media (max-width: $md) {
+        font-size: 15px;
+        gap: 10px;
+    }
 }
 
 .circle {
     height: 50px;
     width: 50px;
-    background: linear-gradient(180deg, #EB1498 0%, #425CEE 100%);;
+    background: linear-gradient(180deg, #eb1498 0%, #425cee 100%);
     border-radius: 50%;
+
+    @media (max-width: $md) {
+        height: 30px;
+        width: 30px;
+    }
 }
 
 .rightSide {
     display: flex;
     gap: 20px;
+
+    @media (max-width: $md) {
+        gap: 10px;
+    }
 }

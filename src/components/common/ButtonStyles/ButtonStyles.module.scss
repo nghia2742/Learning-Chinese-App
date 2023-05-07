@@ -1,3 +1,6 @@
+$sm: 767px;
+$md: 991px;
+
 .buttonOne {
     display: flex;
     justify-content: center;
@@ -13,6 +16,11 @@
     line-height: 22px;
     text-align: justify;
     color: var(--color3);
+
+    @media (max-width: $md) {
+        padding: 6px 14px;
+        font-size: 13px;
+    }
 }
 
 .buttonTwo {
@@ -26,6 +34,11 @@
     font-size: 16px;
     line-height: 22px;
     cursor: pointer;
+
+    @media (max-width: $md) {
+        font-size: 13px;
+        padding: 10px 80px;
+    }
 }
 
 .buttonThree {
@@ -37,9 +50,15 @@
     border-radius: 10px;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
+    font-size: 16px;
 
     &:active {
-        opacity: .8;
+        opacity: 0.8;
+    }
+
+    @media (max-width: $md) {
+        font-size: 13px;
+        padding: 8px 16px;
     }
 }
 
@@ -58,4 +77,9 @@
     line-height: 22px;
     text-align: justify;
     color: var(--color1);
+
+    @media (max-width: $md) {
+        padding: 6px 14px;
+        font-size: 13px;
+    }
 }

@@ -1,3 +1,6 @@
+$sm:767px;
+$md: 991px;
+
 .buttonOne {
     display: flex;
     justify-content: center;
@@ -25,7 +28,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1;
+    z-index: 10;
 }
 
 .popup-inner {
@@ -36,6 +39,10 @@
     border-radius: 10px;
     overflow: auto;
     position: relative;
+
+    @media (max-width: $sm) {
+        padding: 20px 60px;
+    }
 }
 
 .close-btn {
@@ -45,6 +52,14 @@
     background-color: white;
     border: none;
     cursor: pointer;
+
+    @media (max-width: $sm) {
+        button {
+            font-size: 10px;
+            padding: 5px 8px;
+            border-radius: 5px;
+        }
+    }
 }
 
 .area_input {
@@ -59,6 +74,19 @@
     align-items: center;
     margin-bottom: 30px;
     justify-content: space-between;
+    
+    input {
+        width: 300px;
+    }
+
+    @media (max-width: $sm) {
+        gap: 20px;
+
+        input {
+            width: 200px;
+            font-size: 13px;
+        }
+    }
 }
 
 .area_input_h1 {
@@ -66,6 +94,11 @@
     font-size: 40px;
     font-weight: 700;
     margin-bottom: 30px;
+
+    @media (max-width: $sm) {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
 }
 
 .wrap_checkbox {
@@ -73,4 +106,8 @@
     gap: 10px;
     align-items: center;
     margin-bottom: 30px;
+
+    @media (max-width: $sm) {
+        font-size: 13px;
+    }
 }

@@ -14,7 +14,7 @@ function GateCard(props) {
                 <Popup text={'GO!'}/>
             </div>
             <div className={cx('bgCustomize')}>
-                <img src={props.urlImage} alt='' width={150}/>
+                <img src={props.urlImage} alt=''/>
             </div>
         </div>
      );

@@ -7,6 +7,17 @@ import ButtonStyles from '../ButtonStyles'
 const cx = classnames.bind(styles);
 
 function PopupLogin(props) {
+
+    const [formLogin, setFormLogin] = useState('');
+    
+    const handleInputChange = (value) => {
+        setFormLogin(value);
+    };
+
+    const handleSubmit = () => { 
+        alert(formLogin)
+    }
+
     const [show, setShow] = useState(false);
 
     const togglePopup = () => {
@@ -21,25 +32,23 @@ function PopupLogin(props) {
             {show && (
                 <div className={cx('popup')}>
                     <div className={cx('popup-inner')}>
-                        <button className={cx('close-btn')} onClick={togglePopup}>
+                        <div className={cx('close-btn')} onClick={togglePopup}>
                         <ButtonStyles buttonStyles={'buttonThree'} text={'X'}/>
-                        </button>
+                        </div>
                         
                         <div className={cx('area_input')}>
                             <h1 className={cx('area_input_h1')}>LOGIN</h1>
                             <div className={cx('wrap_input')}>
-                                <span className={cx('wrap_input_text')}>Username:</span>
-                                <InputStyle textPlaceHolder={'Username...'} type={'text'} />
+                                <InputStyle textPlaceHolder={'Username...'} onChange={handleInputChange} type={'text'} />
                             </div>
                             <div className={cx('wrap_input')}>
-                                <span className={cx('wrap_input_text')}>Password:</span>
-                                <InputStyle textPlaceHolder={'Password...'} type={'password'}/>
+                                <InputStyle textPlaceHolder={'Password...'} onChange={handleInputChange} type={'password'}/>
                             </div>
                             <div className={cx('wrap_checkbox')}>
                                 <input type="checkbox" id="showPassword" name="showPassword" value=""/>
-                                <label for="showPassword">Show password</label>
+                                <label htmlFor="showPassword">Show password</label>
                             </div>
-                            <ButtonStyles buttonStyles={'buttonTwo'} text={'Login'}/>
+                            <ButtonStyles buttonStyles={'buttonTwo'} submit={handleSubmit} text={'Login'}/>
                         </div>
                     </div>
                 </div>

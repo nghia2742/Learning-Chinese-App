@@ -24,12 +24,10 @@ function Entrance() {
                 <div className={cx('wrap_img')}>
                     <img
                         src={process.env.PUBLIC_URL + '/svg/vietnam.svg'}
-                        width={200}
                         alt="vietnam"
                     ></img>
                     <img
                         src={process.env.PUBLIC_URL + '/svg/china.svg'}
-                        width={200}
                         alt="china"
                     ></img>
                 </div>
