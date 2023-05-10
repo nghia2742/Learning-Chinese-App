@@ -1,3 +1,5 @@
+@import '/src/base.scss';
+
 .container {
     margin: 20px 15px 100px 0;
     display: flex;
@@ -7,22 +9,31 @@
 }
 
 .wrap_class {
+    margin-top: 20px;
     display: flex;
     padding: 20px;
-    gap: 100px;
+    justify-content: space-around;
+    gap: 50px;
     flex-wrap: wrap;
 }
 
 .card {
-    width: 350px;
+    width: 300px;
     height: fit-content;
-    padding: 30px 20px;
+    padding: 40px 20px;
     border-radius: 20px;
     box-shadow: 2px 4px 9px rgba(0, 0, 0, 0.6);
     color: var(--color2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     &:hover {
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+
+    img {
+        width: 250px;
     }
 }
 

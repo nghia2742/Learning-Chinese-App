@@ -12,23 +12,28 @@ function Lookup() {
     const token =
         'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDRlMzRjZWM0MjUwZGJiYzk2NTczZTIiLCJpYXQiOjE2ODMyOTI2NTEsImV4cCI6MTY4NDE1NjY1MX0.gvqHwfJs1yucikdoSQTXSpOtu3qv3PG6jvwWG5uY52Q';
 
+    const [keyword, setKeyWord] = useState('');
     const [word, setWord] = useState('');
-    const [result, setResult] = useState('');
+    const [result, setResult] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
-    const [dictionary, setDictionary] = useState([]);
     const navigate = useNavigate();
 
     useEffect(() => {
-        fetch('https://api-learnvncn.onrender.com/lookup', {
+        if (keyword === '') return;
+        setIsLoading(true);
+        fetch(`https://api-learnvncn.onrender.com/lookup?word=${keyword}`, {
             headers: {
                 Authorization: 'Bearer ' + token,
                 'Content-Type': 'application/json',
             },
         })
             .then((response) => response.json())
-            .then((data) => setDictionary(data))
+            .then((data) => {
+                setResult(data);
+                setIsLoading(false);
+            })
             .catch((error) => console.error(error));
-    }, []);
+    }, [keyword]);
 
     const handleInputChange = (value) => {
         setWord(value);
@@ -36,22 +41,7 @@ function Lookup() {
 
     const handleSubmit = () => {
         navigate(`/student/lookup?word=${word}`);
-        setIsLoading(true);
-
-        const lowerCaseKeyword = word.toLowerCase().trim();
-        const findWord = dictionary.find((item) =>
-            item.word.toLowerCase().includes(lowerCaseKeyword)
-        );
-
-        setTimeout(() => {
-            setIsLoading(false);
-        }, 1500);
-
-        if (findWord !== undefined) {
-            setResult(findWord);
-        } else {
-            setResult(false);
-        }
+        setKeyWord(word);
     };
 
     return (
@@ -76,18 +66,16 @@ function Lookup() {
             </div>
 
             {/* RESULT */}
-            {result === '' ? (
+            {keyword === '' ? (
                 <></>
             ) : (
                 <div className={cx('wrap_result')}>
-                    <h2 className={cx('labelSearch')}>RESULT</h2>
-                    <hr></hr>
                     {isLoading ? (
                         <Loader />
                     ) : (
                         <>
                             <div className={cx('result')}>
-                                {result === false ? (
+                                {!result.length ? (
                                     <div className={cx('notFound')}>
                                         <img
                                             src={
@@ -95,7 +83,6 @@ function Lookup() {
                                                 '/svg/search.svg'
                                             }
                                             alt=""
-                                            width={150}
                                         />
                                         <h1 className={cx('textNotFound')}>
                                             NOT FOUND
@@ -103,57 +90,56 @@ function Lookup() {
                                     </div>
                                 ) : (
                                     <>
-                                        <h1>{result.word}</h1>
+                                        <h1 className={cx('word')}>{result[0].word}</h1>
 
                                         <div className={cx('wordType')}>
-                                            <span>【{result.type}】</span>
-                                            <span>【{result.pinyin}】</span>
-                                            <span>【{result.level}】</span>
+                                            <span>【{result[0].type}】</span>
+                                            <span>【{result[0].pinyin}】</span>
+                                            <span>【{result[0].level}】</span>
                                         </div>
                                         <p>
-                                            <b>Definition: </b> {result.meaning}
+                                            <b>Definition: </b>{' '}
+                                            {result[0].meaning}
                                         </p>
                                         <p>
-                                            <b>Example: </b> {result.example}
+                                            <b>Example: </b> {result[0].example}
                                         </p>
-                                        <p>
+                                        <span>
                                             <b>Linking word: </b>
-                                            {result.linking_word.map(
+                                            {result[0].linking_word.map(
                                                 (e, index) => {
                                                     return (
-                                                        <>
+                                                        <span key={index}>
                                                             <Link
                                                                 className={cx(
                                                                     'wordDocument'
                                                                 )}
-                                                                key={index}
                                                             >
                                                                 {e}
                                                             </Link>
                                                             <span>&ensp;</span>
-                                                        </>
+                                                        </span>
                                                     );
                                                 }
                                             )}
-                                        </p>
-                                        <p>
+                                        </span>
+                                        <span>
                                             <b>Documents: </b>
-                                            {result.bai_khoa.map((e, index) => {
+                                            {result[0].text.map((e, index) => {
                                                 return (
-                                                    <>
+                                                    <span key={index}>
                                                         <Link
                                                             className={cx(
                                                                 'wordDocument'
                                                             )}
-                                                            key={index}
                                                         >
                                                             {e}
                                                         </Link>
                                                         <span>&ensp;</span>
-                                                    </>
+                                                    </span>
                                                 );
                                             })}
-                                        </p>
+                                        </span>
                                     </>
                                 )}
                             </div>

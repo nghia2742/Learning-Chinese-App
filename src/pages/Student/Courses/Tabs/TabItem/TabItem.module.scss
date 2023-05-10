@@ -1,3 +1,5 @@
+@import '/src/base.scss';
+
 .card {
     display: flex;
     gap: 40px;
@@ -12,12 +14,24 @@
     &:hover {
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     }
+
+    @media (max-width: $sm) {
+        padding: 20px 30px;
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 .imageCourse {
     width: 200px;
     object-fit: contain;
     border-radius: 10px;
+}
+
+.titleCourse {
+    @media (max-width: $sm) {
+        font-size: 20px;
+    }
 }
 
 .subTitleCourse {

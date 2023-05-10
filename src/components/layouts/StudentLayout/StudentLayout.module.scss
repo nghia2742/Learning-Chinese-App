@@ -1,14 +1,23 @@
+@import '/src/base.scss';
+
 .main {
     display: flex;
 }
 
 .left {
-    min-width: 200px;
+    width: 200px;
+
+    @media (max-width: $md) {
+        width: 0;
+    }
 }
 
 .right {
     width: calc(100vw - 250px);
     height: fit-content;
-    margin: 0 20px;
+    padding: 0 20px;
+    @media (max-width: $md) {
+        width: 100vw;
+    }
 }
 

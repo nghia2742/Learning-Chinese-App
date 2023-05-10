@@ -1,3 +1,5 @@
+@import '/src/base.scss';
+
 .container {
     margin: 20px 15px 100px 0;
     width: auto;
@@ -7,9 +9,10 @@
 }
 
 .banner {
-    width: 100%;
-    height: 200px;
-    border-radius: 10px;
+    width: auto;
+    height: 40vh;
+    background-color: var(--color7);
+    object-fit: cover;
 }
 
 .wrap_carousel {
@@ -20,5 +23,11 @@
     margin-bottom: 20px;
     display: flex;
     gap: 15px;
+}
+
+.container_news {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }
 

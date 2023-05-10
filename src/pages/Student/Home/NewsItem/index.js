@@ -6,7 +6,6 @@ const cx = classNames.bind(styles);
 function NewsItem() {
     return (
         <div className={cx('news_item')}>
-            <div className={cx('news_item_icon')}></div>
             <div className={cx('news_item_content')}>
                 <h3 className={cx('news_title')}>
                     Title of news Title of news Title of news

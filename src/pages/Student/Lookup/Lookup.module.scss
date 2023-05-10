@@ -1,3 +1,6 @@
+$sm: 767px;
+$md: 991px;
+
 .container {
     margin: 20px 15px 100px 0;
     display: flex;
@@ -7,17 +10,49 @@
 }
 
 .wrap_search {
-    margin-top: 50px;
     width: 100%;
     height: 100px;
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 15px;
+    flex-wrap: wrap;
+
+    @media (max-width: $md) {
+        button {
+            font-size: 16px;
+            padding: 10px 20px;
+        }
+    }
+
+    @media (max-width: $sm) {
+        margin-bottom: 80px;
+    }
 }
 
 .inputSearch input{
     width: 40vw;
     font-style: normal;
+
+    @media (max-width: $md) {
+        padding: 8px 10px;
+    }
+
+    @media (max-width: $sm) {
+        width: 80vw;
+    }
+}
+
+.buttonSearch button {
+
+    &:active {
+        background-color: var(--color5);
+    }
+
+    @media (max-width: $sm) {
+       padding-left: 50px;
+       padding-right: 50px;
+    }
 }
 
 .wrap_result {
@@ -25,10 +60,15 @@
     height: fit-content;
     padding: 50px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    margin-top: 50px;
+    
+    @media (max-width: $sm) {
+        margin-top: 0;
+        padding: 30px;
+     }
 }
 
 .result {
-    margin-top: 20px;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -39,13 +79,50 @@
     align-items: center;
     justify-content: center;
     gap: 30px;
+
+    img {
+        width: 100px;
+    }
+
+    @media (max-width: $md) {
+        img {
+            width: 70px;
+        }
+    }
+
+    @media (max-width: $sm) {
+        img {
+            width: 40px;
+        }
+    }
 }
 .textNotFound {
     font-size: 60px;
+
+    @media (max-width: $md) {
+        font-size: 40px;
+    }
+
+    @media (max-width: $sm) {
+        font-size: 20px;
+    }
+}
+
+.word {
+
+    @media (max-width: $sm) {
+        font-size: 28px;
+    }
 }
 
 .wordType {
     color: var(--color9);
+
+    @media (max-width: $sm) {
+        display: flex;
+        flex-direction: column;
+    }
+
 }
 
 .wordDocument {

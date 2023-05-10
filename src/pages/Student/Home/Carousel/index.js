@@ -21,27 +21,20 @@ export default class Responsive extends Component {
             initialSlide: 0,
             responsive: [
                 {
-                    breakpoint: 1024,
-                    settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 3,
-                        infinite: true,
-                        dots: true,
-                    },
-                },
-                {
-                    breakpoint: 600,
+                    breakpoint: 1080,
                     settings: {
                         slidesToShow: 2,
                         slidesToScroll: 2,
-                        initialSlide: 2,
+                        dots: true,
+                        initialSlide: 0,
                     },
                 },
                 {
-                    breakpoint: 480,
+                    breakpoint: 580,
                     settings: {
                         slidesToShow: 1,
                         slidesToScroll: 1,
+                        initialSlide: 0,
                     },
                 },
             ],
@@ -50,11 +43,15 @@ export default class Responsive extends Component {
             <div>
                 <Slider {...settings}>
                     {items.map((item, index) => (
-                        <div key={index}>
-                            <div className={cx('carousel_item')} >
-                                <img className={cx('imageCourse')} src={item.image} alt=''/>
+                        <div className={cx('carousel')} key={index}>
+                            <div className={cx('carousel_item')}>
+                                <img
+                                    className={cx('imageCourse')}
+                                    src={item.image}
+                                    alt=""
+                                />
                             </div>
-                                <h3 className={cx('titleCourse')}>{item.title}</h3>
+                            <h3 className={cx('titleCourse')}>{item.title}</h3>
                         </div>
                     ))}
                 </Slider>

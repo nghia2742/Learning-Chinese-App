@@ -1,3 +1,5 @@
+@import '/src/base.scss';
+
 .wrap_navTabs {
     display: flex;
     gap: 20px;
@@ -8,6 +10,10 @@
     cursor: pointer;
     color: var(--color7);
     font-size: 18px;
+
+    @media (max-width: $sm) {
+        font-size: 16px;
+    }
 }
 
 .active {
