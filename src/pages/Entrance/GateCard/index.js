@@ -11,7 +11,7 @@ function GateCard(props) {
             <h3 className= {cx('wrapper_h3')}>Login with</h3>
             <h1 className= {cx('wrapper_h1')}>{props.account}</h1>
             <div className={cx('wrap_button')}>
-                <Popup text={'GO!'}/>
+                <Popup text={'GO!'} role={props.account.toLowerCase()}/>
             </div>
             <div className={cx('bgCustomize')}>
                 <img src={props.urlImage} alt=''/>

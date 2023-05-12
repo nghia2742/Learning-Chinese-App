@@ -1,3 +1,5 @@
+@import '/src/base.scss';
+
 .wrapper {
     position: relative;
     height: fit-content;
@@ -21,27 +23,43 @@
 
 .wrap_register_form {
     margin: 0 auto;
-    padding: 50px 60px;
+    padding: 30px 60px;
     width: fit-content;
     background-color: var(--color1);
     border-radius: 10px;
-    text-align: center;
+
+    @media (max-width: $sm) {
+        padding: 20px 30px;
+    }
 }
 
 .wrap_input_text {
     font-style: normal;
-    font-weight: 700;
-    font-size: 18px;
+    font-size: 13px;
+    color: var(--color8);
     line-height: 27px;
 }
 
 .wrap_input {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-    gap: 50px;
     margin-bottom: 15px;
+
+    input {
+        width: 100%;
+        outline: none;
+        font-size: 14px;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid var(--color7);
+
+        &:focus {
+            box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+        }
+    }
+
+    span {
+        font-family: 'Noto Sans', sans-serif;
+        font-size: 13px;
+    }
 }
 .wrap_radio {
     display: flex;
