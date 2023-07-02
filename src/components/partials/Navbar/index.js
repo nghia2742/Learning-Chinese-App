@@ -29,8 +29,7 @@ function Navbar(props) {
         <nav className={cx('navbar')}>
             <div className={cx('wrapper')}>
                 <Link to={'/'} className={cx('logo')}>
-                    <div className={cx('circle')}></div>
-                    越爱学汉语
+                    <img src={process.env.PUBLIC_URL + '/images/logo.png'} alt=''/>
                 </Link>
                 <div className={cx('rightSide')}>
                     {props.isEntrance ? btnRegister : ''}

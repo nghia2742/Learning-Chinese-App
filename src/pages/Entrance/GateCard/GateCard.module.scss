@@ -18,7 +18,7 @@
     font-size: 20px;
     padding-top: 40px;
     padding-left: 30px;
-
+    text-align: left;
 }
 
 .wrapper_h1 {
@@ -63,4 +63,12 @@
             width: 100px;
         }
     }
+}
+
+.hint {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    color: var(--color1);
+    font-size: 20px;
 }

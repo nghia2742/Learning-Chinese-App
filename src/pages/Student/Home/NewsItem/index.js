@@ -8,7 +8,7 @@ function NewsItem() {
         <div className={cx('news_item')}>
             <div className={cx('news_item_content')}>
                 <h3 className={cx('news_title')}>
-                    Title of news Title of news Title of news
+                    Title of news
                 </h3>
                 <p className={cx('news_content')}>
                     Lorem velit est esse Lorem velit adipisicing amet pariatur

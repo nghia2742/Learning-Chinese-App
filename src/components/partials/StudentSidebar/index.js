@@ -12,11 +12,16 @@ function StudentSidebar(props) {
 
     const [activePage, setActivePage] = useState(currentPage);
 
-    const isSidebar = props.isSidebar?'sidebarActive':'';
+    const isSidebar = props.isSidebar;
 
     const handleClick = (page) => {
         setActivePage(page);
+        if (isSidebar===true) {
+            window.location.href = page;
+        }
     };
+
+
 
     return (
         <>

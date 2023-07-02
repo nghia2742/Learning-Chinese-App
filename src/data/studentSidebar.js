@@ -1,6 +1,7 @@
 import { AiOutlineHome, AiOutlineBook } from 'react-icons/ai';
 import { BiSearch } from 'react-icons/bi';
 import { BsPeople } from 'react-icons/bs';
+import { CiLogout } from 'react-icons/ci';
 
 const sidebarItems = [
     {
@@ -30,6 +31,13 @@ const sidebarItems = [
         title: 'My class',
         key: 'myclass',
         icon: <BsPeople />,
+    },
+    {
+        id: 5,
+        url: '/',
+        title: 'logout',
+        key: 'logout',
+        icon: <CiLogout />,
     },
 ];
 

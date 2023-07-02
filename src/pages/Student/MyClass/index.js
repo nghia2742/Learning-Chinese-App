@@ -8,22 +8,22 @@ const classList = [
     {
         image: 'imageClass.svg',
         nameClass: 'Learn Chinese in 3 months for HSK3',
-        teacher: 'Tam Truong',
+        teacher: 'Mr. Lee',
     },
     {
         image: 'imageClass.svg',
         nameClass: 'Learn Chinese in 3 months for HSK3',
-        teacher: 'Tam Truong',
+        teacher: 'Mr. Lee',
     },
     {
         image: 'imageClass.svg',
         nameClass: 'Learn Chinese in 3 months for HSK3',
-        teacher: 'Tam Truong',
+        teacher: 'Mr. Lee',
     },
     {
         image: 'imageClass.svg',
         nameClass: 'Learn Chinese in 3 months for HSK3',
-        teacher: 'Tam Truong',
+        teacher: 'Mr. Lee',
     },
 ];
 

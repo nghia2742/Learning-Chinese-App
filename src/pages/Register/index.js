@@ -100,7 +100,7 @@ function Register() {
 
     useEffect(() => {
         if (isSubmitted) {
-            fetch('http://127.0.0.1:3001/register', {
+            fetch('https://api-learnvncn.onrender.com/register', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

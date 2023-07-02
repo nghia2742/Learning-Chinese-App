@@ -19,6 +19,7 @@ function Home() {
     return (
         <main className={cx('container')}>
             {/* BANNER */}
+
             <img
                 src="https://picsum.photos/1015/200/?random"
                 className={cx('banner')}
@@ -35,7 +36,6 @@ function Home() {
                 </h2>
                 <Carousel items={items} />
             </div>
-
             {/* NEWS */}
             <div className={cx('wrap_news')}>
                 <h2 className={cx('title_section')}>
@@ -45,10 +45,10 @@ function Home() {
                     <span>News</span>
                 </h2>
                 <div className={cx('container_news')}>
-                    <NewsItem/>
-                    <NewsItem/>
-                    <NewsItem/>
-                    <NewsItem/>
+                    <NewsItem />
+                    <NewsItem />
+                    <NewsItem />
+                    <NewsItem />
                 </div>
             </div>
         </main>
