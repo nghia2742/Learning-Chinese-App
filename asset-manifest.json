@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/Learning-Chinese-App/static/css/main.0b2db937.css",
+    "main.js": "/Learning-Chinese-App/static/js/main.0678a687.js",
+    "static/js/787.55673b7c.chunk.js": "/Learning-Chinese-App/static/js/787.55673b7c.chunk.js",
+    "static/media/bgStudy.jpg": "/Learning-Chinese-App/static/media/bgStudy.62c8bd81b916baa15c01.jpg",
+    "static/media/slick.svg": "/Learning-Chinese-App/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/Learning-Chinese-App/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/Learning-Chinese-App/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/Learning-Chinese-App/static/media/slick.295183786cd8a1389865.woff",
+    "index.html": "/Learning-Chinese-App/index.html",
+    "main.0b2db937.css.map": "/Learning-Chinese-App/static/css/main.0b2db937.css.map",
+    "main.0678a687.js.map": "/Learning-Chinese-App/static/js/main.0678a687.js.map",
+    "787.55673b7c.chunk.js.map": "/Learning-Chinese-App/static/js/787.55673b7c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0b2db937.css",
+    "static/js/main.0678a687.js"
+  ]
+}
