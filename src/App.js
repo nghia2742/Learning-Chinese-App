@@ -5,7 +5,7 @@ import DefaultLayout from './components/layouts/DefaultLayout';
 
 function App() {
     return (
-        <Router basename='/Learning-Chinese-App'>
+        <Router>
             <div className="App">
                 <Routes>
                     {publicRoutes.map((route, index) => {
