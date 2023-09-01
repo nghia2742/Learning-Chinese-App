@@ -1,6 +1,6 @@
 {
   "name": "chinese-app",
-  "homepage":"https://nghia2742.github.io/Learning-Chinese-App",
+  "homepage":".",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
